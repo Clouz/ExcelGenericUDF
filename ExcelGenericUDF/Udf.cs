@@ -21,7 +21,7 @@ namespace ExcelGenericUDF
 
         }
 
-        [ExcelFunction(Description = "Data una matrice con tipico, potenza carico e lunghezza del cavo restituisce la sezione la sezione")]
+        [ExcelFunction(Description = "Data una matrice con tipico, potenza e lunghezza del cavo restituisce la sezione")]
         public static string ClaudioCalcolaCavi(
                 [ExcelArgument(Description = "Inserire una matrice dove nella prima colonna è indicato il tipico, nella seconda la potenza (kW) e nelle restanti righe di intestazione le varie lunghezze del cavo", Name = "Matrice Cavi")] object[,] matriceCavi,
                 [ExcelArgument(Description = "Inserire il tipico desiderato già presente nella matrice", Name = "Tipico")] string tipico,
