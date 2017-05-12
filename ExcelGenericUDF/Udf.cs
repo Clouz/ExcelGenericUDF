@@ -34,6 +34,8 @@ namespace ExcelGenericUDF
                 int righeMatrice = matriceCavi.GetLength(0);
                 int colonneMatrice = matriceCavi.GetLength(1);
 
+                if (tipico == "") return "";
+
                 for (int i = 1; i < righeMatrice; i++)
                 {
                     if (tipico.ToLower() == matriceCavi[i,0].ToString().ToLower())
@@ -44,43 +46,19 @@ namespace ExcelGenericUDF
                             {
                                 if (double.Parse(matriceCavi[0, ii].ToString()) >= lunghezza)
                                 {
-                                    return $"[{matriceCavi[i, 1].ToString()}; {matriceCavi[0, ii].ToString()}] {matriceCavi[i, ii].ToString()}";
+                                    return $"{matriceCavi[i, ii].ToString()} [{matriceCavi[i, 1].ToString()}; {matriceCavi[0, ii].ToString()}]";
                                 }
                             }
                         }
                     }
                 }
 
-                return "Nessuna corrispondenza trovata";
+                return "NO MATCH FOUND";
             }
             catch (Exception e)
             {
                 return e.ToString();
             }
-        }
-    }
-
-    public class MyClass
-    {
-        public int Binary_Search(int[] array, int elemento)
-        {
-            int start = 0, end = array.Length - 1, centro = 0;
-            while (start <= end)
-            {
-                centro = (start + end) / 2;
-                if (elemento < array[centro])
-                {
-                    end = centro - 1;
-                }
-                else
-                {
-                    if (elemento > array[centro])
-                        start = centro + 1;
-                    else
-                        return centro; // Caso: elemento==array[centro]
-                }
-            }
-            return -1;
         }
     }
 }
