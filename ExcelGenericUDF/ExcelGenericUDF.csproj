@@ -62,6 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cavi\Calcola.cs" />
+    <Compile Include="Scheda\Nome.cs" />
+    <Compile Include="Scheda\Rinomina.cs" />
+    <Compile Include="Stringa\Spazia.cs" />
     <Compile Include="Udf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +75,7 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.0.33.9\tools\ExcelDna.xll" "$(TargetDir)ExcelGenericUDF-AddIn.xll*" /C /Y
