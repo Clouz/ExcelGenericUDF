@@ -75,7 +75,16 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ClassiDiScambio\ClassiDiScambio.csproj">
+      <Project>{430e6707-f233-4091-8b93-2c2a95bdf03e}</Project>
+      <Name>ClassiDiScambio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelGui\ExcelGui.csproj">
+      <Project>{389192f4-b61b-4201-a9f9-c7a4ee725ed2}</Project>
+      <Name>ExcelGui</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.0.33.9\tools\ExcelDna.xll" "$(TargetDir)ExcelGenericUDF-AddIn.xll*" /C /Y
