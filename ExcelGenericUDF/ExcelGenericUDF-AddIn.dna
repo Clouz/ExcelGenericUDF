@@ -20,4 +20,18 @@
        See the main Excel-DNA site at http://excel-dna.net for downloads of the full distribution.
   -->
 
+  <CustomUI>
+    <customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui'>
+      <ribbon>
+        <tabs>
+          <tab id='myFirstTab' label='Claudio' visible='true'>
+            <group id='myFirstGroup' label='My First Group' visible='true'>
+              <button id='myFirstButton' label='My First Button' size='large' onAction='prova' visible='true'/>
+            </group >
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>
+  </CustomUI>
+  
 </DnaLibrary>

@@ -26,7 +26,7 @@ namespace ExcelGui
         {
 
             InitializeComponent();
-
+            DataContext = data;
         }
 
         private void TextBlock_GotFocus(object sender, RoutedEventArgs e)
