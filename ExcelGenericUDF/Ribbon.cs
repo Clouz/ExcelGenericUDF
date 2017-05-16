@@ -16,6 +16,8 @@ using System.Runtime.InteropServices;
 using ExcelDna.Integration.CustomUI;
 using System.Windows.Forms;
 
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace ExcelGenericUDF
 {
     [ComVisible(true)]
@@ -41,17 +43,10 @@ namespace ExcelGenericUDF
 
         public void OnButtonPressed(IRibbonControl control)
         {
-            var test = new ClassiDiScambio.NumeraFogli.Sheet()
-            {
-                Cell = "",
-                FromSheet = 2,
-                StartingNumber = 1,
-                ToSheet = 2,
-                TotalSheet = 3
-            };
+            var sheet = new ClassiDiScambio.NumeraFogli.Sheet((Excel.Application)ExcelDnaUtil.Application);
 
-            var lala = new ExcelGui.NumeraFogli(test);
-            lala.ShowDialog();
+            var excelGui = new ExcelGui.NumeraFogli(sheet);
+            excelGui.ShowDialog();
         }
 
 

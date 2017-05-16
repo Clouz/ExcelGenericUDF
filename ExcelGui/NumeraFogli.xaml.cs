@@ -22,16 +22,21 @@ namespace ExcelGui
     /// </summary>
     public partial class NumeraFogli : Window
     {
+
+        Sheet data;
+
         public NumeraFogli(Sheet data)
         {
+            this.data = data;
 
             InitializeComponent();
-            DataContext = data;
+            DataContext = this.data;
         }
 
-        private void TextBlock_GotFocus(object sender, RoutedEventArgs e)
+        private void Esegui_Click(object sender, RoutedEventArgs e)
         {
-
+            data.Write();
+            this.Close();
         }
     }
 }
