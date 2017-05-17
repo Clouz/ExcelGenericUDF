@@ -31,6 +31,8 @@ namespace ExcelGui
 
             InitializeComponent();
             DataContext = this.data;
+
+            ListaPagine.ItemsSource = this.data.contenuto;
         }
 
         private void Esegui_Click(object sender, RoutedEventArgs e)

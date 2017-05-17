@@ -12,8 +12,8 @@ using ExcelDna.Integration.CustomUI;
 
 using System.Runtime.InteropServices;
 
-using System.Runtime.InteropServices;
-using ExcelDna.Integration.CustomUI;
+
+
 using System.Windows.Forms;
 
 using Excel = Microsoft.Office.Interop.Excel;
@@ -30,9 +30,9 @@ namespace ExcelGenericUDF
 <customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui'>
     <ribbon>
     <tabs>
-        <tab id='tab1' label='My Tab'>
-        <group id='group1' label='My Group'>
-            <button id='button1' label='My Button' onAction='OnButtonPressed'/>
+        <tab id='tab1' label='Claudio Tab'>
+        <group id='group1' label='Fogli'>
+            <button id='NumeraFogli' label='NumeraFogli' onAction='OnButtonPressed'/>
         </group >
         </tab>
     </tabs>
