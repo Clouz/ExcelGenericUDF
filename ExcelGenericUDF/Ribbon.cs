@@ -43,10 +43,18 @@ namespace ExcelGenericUDF
 
         public void OnButtonPressed(IRibbonControl control)
         {
-            var sheet = new ClassiDiScambio.NumeraFogli.Sheet((Excel.Application)ExcelDnaUtil.Application);
+            try
+            {
+                var sheet = new ClassiDiScambio.NumeraFogli.Sheet((Excel.Application)ExcelDnaUtil.Application);
 
-            var excelGui = new ExcelGui.NumeraFogli(sheet);
-            excelGui.ShowDialog();
+                var excelGui = new ExcelGui.NumeraFogli(sheet);
+                excelGui.ShowDialog();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
         }
 
 

@@ -40,5 +40,11 @@ namespace ExcelGui
             data.Write();
             this.Close();
         }
+
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            data.ReloadList();
+        }
+
     }
 }

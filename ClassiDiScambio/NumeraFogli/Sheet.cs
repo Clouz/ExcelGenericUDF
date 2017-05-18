@@ -31,11 +31,12 @@ namespace ClassiDiScambio.NumeraFogli
         public List<ContenutoFogli> contenuto { get; set; } = new List<ContenutoFogli>();
 
         private Excel.Application application;
+        private Excel.Workbook workbook;
 
         public Sheet(Excel.Application application)
         {
             this.application = application;
-            Excel.Workbook workbook = application.ActiveWorkbook;
+            this.workbook = application.ActiveWorkbook;
             Excel.Worksheet worksheets = workbook.ActiveSheet;
 
             Cell = application.ActiveCell.Address;
@@ -52,13 +53,7 @@ namespace ClassiDiScambio.NumeraFogli
         public void ReloadList()
         {
             contenuto.Clear();
-            Excel.Workbook workbook = application.ActiveWorkbook;
 
-            contenuto.Add(new ContenutoFogli() {
-                Id=1, Description = "prova", Value="fdf"
-            });
-
-            /*
             for (int i = FromSheet; i <= ToSheet; i++)
             {
                 Excel.Worksheet worksheets = workbook.Worksheets[i];
@@ -66,11 +61,9 @@ namespace ClassiDiScambio.NumeraFogli
                 {
                     Id = worksheets.Index,
                     Description = worksheets.Name,
-                    Value = worksheets.Cells[Row,Column]
+                    Value = (worksheets.Cells[Row,Column] as Excel.Range).Value
                 });
-            }*/
-
-
+            }
         }
 
         public void Write()
