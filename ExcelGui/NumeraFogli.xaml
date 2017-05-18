@@ -29,8 +29,8 @@
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Text="Start Counting From:" TextAlignment="Left" VerticalAlignment="Center"/>
 
         <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Text="{Binding Path=Cell}" TextAlignment="Left" VerticalAlignment="Center" Name="Cell" IsEnabled="False"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=FromSheet, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="From" TextChanged="TextChanged" Validation.Error="OnValidationError"/>
-        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Path=ToSheet, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="To" TextChanged="TextChanged" Validation.Error="OnValidationError"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=FromSheet, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="From" Validation.Error="OnValidationError"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Path=ToSheet, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="To" Validation.Error="OnValidationError"/>
         <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Text="{Binding Path=StartingNumber, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="StartFrom" Validation.Error="OnValidationError"/>
 
         <Button Grid.ColumnSpan="4" Grid.Row="4" Name="Esegui" Click="Esegui_Click">Execute</Button>

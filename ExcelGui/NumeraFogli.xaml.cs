@@ -43,11 +43,6 @@ namespace ExcelGui
             this.Close();
         }
 
-        private void TextChanged(object sender, TextChangedEventArgs e)
-        {
-            data.ReloadList();
-        }
-
         private void OnValidationError(object sender, ValidationErrorEventArgs e)
         {
             if (e.Action == ValidationErrorEventAction.Added)
