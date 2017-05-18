@@ -22,7 +22,6 @@ namespace ExcelGui
     /// </summary>
     public partial class NumeraFogli : Window
     {
-
         Sheet data;
 
         int _noOfErrorsOnScreen = 0;
