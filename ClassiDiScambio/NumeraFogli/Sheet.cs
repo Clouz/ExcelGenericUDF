@@ -61,7 +61,7 @@ namespace ClassiDiScambio.NumeraFogli
                 {
                     Id = worksheets.Index,
                     Description = worksheets.Name,
-                    Value = (worksheets.Cells[Row,Column] as Excel.Range).Value
+                    Value = Convert.ToString((worksheets.Cells[Row,Column] as Excel.Range).Value)
                 });
             }
         }

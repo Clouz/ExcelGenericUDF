@@ -25,6 +25,8 @@ namespace ExcelGui
 
         Sheet data;
 
+        int _noOfErrorsOnScreen = 0;
+
         public NumeraFogli(Sheet data)
         {
             this.data = data;
@@ -46,5 +48,14 @@ namespace ExcelGui
             data.ReloadList();
         }
 
+        private void OnValidationError(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                _noOfErrorsOnScreen++;
+            else
+                _noOfErrorsOnScreen--;
+
+            Esegui.IsEnabled = _noOfErrorsOnScreen > 0 ? false : true;
+        }
     }
 }

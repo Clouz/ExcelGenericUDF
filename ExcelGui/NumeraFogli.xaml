@@ -16,7 +16,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -25,31 +25,22 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Text="From" TextAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock Grid.Column="2" Grid.Row="1" Text="To" TextAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="2" Text="Total page:" TextAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Path=TotalSheet}" TextAlignment="Left" VerticalAlignment="Center" Name="TotalPage"/>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Text="{Binding Path=TotalSheet}" TextAlignment="Left" VerticalAlignment="Center" Name="TotalPage"/>
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Text="Start Counting From:" TextAlignment="Left" VerticalAlignment="Center"/>
 
         <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Text="{Binding Path=Cell}" TextAlignment="Left" VerticalAlignment="Center" Name="Cell" IsEnabled="False"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=FromSheet}" TextAlignment="Left" VerticalAlignment="Center" Name="From" TextChanged="TextChanged"/>
-        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Path=ToSheet}" TextAlignment="Left" VerticalAlignment="Center" Name="To" TextChanged="TextChanged"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Text="{Binding Path=StartingNumber}" TextAlignment="Left" VerticalAlignment="Center" Name="StartFrom"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=FromSheet, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="From" TextChanged="TextChanged" Validation.Error="OnValidationError"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Path=ToSheet, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="To" TextChanged="TextChanged" Validation.Error="OnValidationError"/>
+        <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Text="{Binding Path=StartingNumber, ValidatesOnExceptions=True, NotifyOnValidationError=True}" TextAlignment="Left" VerticalAlignment="Center" Name="StartFrom" Validation.Error="OnValidationError"/>
 
         <Button Grid.ColumnSpan="4" Grid.Row="4" Name="Esegui" Click="Esegui_Click">Execute</Button>
 
-        <ListBox Grid.ColumnSpan="4" Grid.Row="5" Margin="0,10,0,0" Name="ListaPagine" HorizontalContentAlignment="Center">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="1" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Id}" Grid.Column="0" TextAlignment="Center"/>
-                        <TextBlock Text="{Binding Description}" Grid.Column="1" TextAlignment="Center"/>
-                        <TextBlock Text="{Binding Value}" Grid.Column="2" TextAlignment="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <DataGrid Grid.Row="5" Grid.ColumnSpan="4" AutoGenerateColumns="False" Margin="0,10,0,0" Name="ListaPagine" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="Auto"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="Auto"/>
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
