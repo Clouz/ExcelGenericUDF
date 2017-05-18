@@ -42,9 +42,9 @@ namespace ClassiDiScambio.NumeraFogli
             Cell = application.ActiveCell.Address;
             Row = application.ActiveCell.Row;
             Column = application.ActiveCell.Column;
-            FromSheet = worksheets.Index;
             TotalSheet = workbook.Worksheets.Count;
             ToSheet = TotalSheet;
+            FromSheet = worksheets.Index;
             StartingNumber = FromSheet;
 
             ReloadList();

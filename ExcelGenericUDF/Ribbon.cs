@@ -32,7 +32,7 @@ namespace ExcelGenericUDF
     <tabs>
         <tab id='tab1' label='Claudio Tab'>
         <group id='group1' label='Fogli'>
-            <button id='NumeraFogli' label='NumeraFogli' onAction='OnButtonPressed'/>
+            <button id='NumeraFogli' label='Numera Fogli' onAction='OnButtonPressed'/>
         </group >
         </tab>
     </tabs>
