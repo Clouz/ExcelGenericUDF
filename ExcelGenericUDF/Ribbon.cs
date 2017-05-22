@@ -32,7 +32,10 @@ namespace ExcelGenericUDF
     <tabs>
         <tab id='tab1' label='Claudio Tab'>
         <group id='group1' label='Fogli'>
-            <button id='NumeraFogli' label='Numera Fogli' onAction='OnButtonPressed'/>
+            <button id='NumeraFogli' label='Numera Fogli' onAction='OnButtonPressedNumeraFogli'/>
+        </group >
+        <group id='group2' label='Celle'>
+            <button id='CreaID' label='Crea ID' onAction='OnButtonPressedCreaID'/>
         </group >
         </tab>
     </tabs>
@@ -41,7 +44,7 @@ namespace ExcelGenericUDF
         }
 
 
-        public void OnButtonPressed(IRibbonControl control)
+        public void OnButtonPressedNumeraFogli(IRibbonControl control)
         {
             try
             {
@@ -53,7 +56,18 @@ namespace ExcelGenericUDF
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
-                throw;
+            }
+        }
+
+        public void OnButtonPressedCreaID(IRibbonControl control)
+        {
+            try
+            {
+                var creaID = new ClassiDiScambio.Celle.CellID((Excel.Application)ExcelDnaUtil.Application);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
 

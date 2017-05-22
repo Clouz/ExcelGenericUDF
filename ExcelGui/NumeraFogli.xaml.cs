@@ -51,5 +51,10 @@ namespace ExcelGui
 
             Esegui.IsEnabled = _noOfErrorsOnScreen > 0 ? false : true;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
