@@ -54,6 +54,8 @@ namespace ClassiDiScambio.NumeraFogli
             set { _StartingNumber = value; }
         }
 
+        public string AddittionalString { get; set; }
+
         public int Row { get; set; }
         public int Column { get; set; }
 
@@ -76,6 +78,8 @@ namespace ClassiDiScambio.NumeraFogli
             ToSheet = TotalSheet;
             FromSheet = worksheets.Index;
             StartingNumber = FromSheet;
+
+            AddittionalString = "";
 
             ReloadList();
         }
@@ -100,10 +104,15 @@ namespace ClassiDiScambio.NumeraFogli
         {
             Excel.Workbook workbook = application.ActiveWorkbook;
             int num = StartingNumber;
+            string testo = "";
+
+            if (AddittionalString != "")
+                testo = "'";
+
             for (int i = FromSheet; i <= ToSheet; i++)
             {
                 Excel.Worksheet worksheets = workbook.Worksheets[i];
-                worksheets.Cells[Row, Column] = num++;
+                worksheets.Cells[Row, Column] = $"{testo}{num++}{AddittionalString}" ;
             }
         }
 
