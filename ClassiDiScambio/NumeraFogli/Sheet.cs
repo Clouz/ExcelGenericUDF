@@ -30,7 +30,7 @@ namespace ClassiDiScambio.NumeraFogli
             get { return this._FromSheet; }
             set
             {
-                if (this._FromSheet != value)
+                if (this._FromSheet != value && value <= ToSheet && value > 0)
                     this._FromSheet = value;
             }
         }
@@ -39,7 +39,10 @@ namespace ClassiDiScambio.NumeraFogli
         public int ToSheet
         {
             get { return _ToSheet; }
-            set { _ToSheet = value; }
+            set {
+                if (_ToSheet != value && value <= TotalSheet && value >= FromSheet)
+                    _ToSheet = value;
+            }
         }
 
         public int TotalSheet { get; set; }
@@ -81,7 +84,7 @@ namespace ClassiDiScambio.NumeraFogli
         {
             contenuto.Clear();
 
-            for (int i = FromSheet; i <= ToSheet; i++)
+            for (int i = 1; i <= ToSheet; i++)
             {
                 Excel.Worksheet worksheets = workbook.Worksheets[i];
                 contenuto.Add(new ContenutoFogli()
