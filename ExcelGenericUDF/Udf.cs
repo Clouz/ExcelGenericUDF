@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 using ExcelDna.Integration;
 using ExcelDna.IntelliSense;
 
+using ExcelDna.Integration.CustomUI;
+
 using Excel = Microsoft.Office.Interop.Excel;
+
+using ClassiDiScambio.NumeraFogli;
+using ExcelGui;
 
 namespace ExcelGenericUDF
 {
@@ -24,5 +29,6 @@ namespace ExcelGenericUDF
         }
 
         public const string nome = "Claudio";
+
     }
 }
