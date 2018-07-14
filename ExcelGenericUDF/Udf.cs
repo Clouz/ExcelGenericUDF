@@ -20,12 +20,12 @@ namespace ExcelGenericUDF
     {
         public void AutoOpen()
         {
-            IntelliSenseServer.Register();
+            IntelliSenseServer.Install();
         }
 
         public void AutoClose()
         {
-
+            IntelliSenseServer.Uninstall();
         }
 
         public const string nome = "Claudio";

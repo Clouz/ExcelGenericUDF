@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 using ExcelDna.Integration;
 using ExcelDna.IntelliSense;
 
-using Excel = Microsoft.Office.Interop.Excel;
-
 namespace ExcelGenericUDF.Stringa
 {
-    public class Spazia 
+    public class Spazia
     {
-
         [ExcelFunction(Name = Udf.nome + ".Stringa.Spazia", Description = "Data una stringa ed un pattern ne spazia il contenuto")]
         public static string spazia(
         [ExcelArgument(Name = "Stringa Iniziale", Description = "")] string nome,
@@ -57,8 +54,6 @@ namespace ExcelGenericUDF.Stringa
             {
                 return $"Stringa non corrispondente al pattern: {e.ToString()}";
             }
-
         }
-
     }
 }
